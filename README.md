@@ -11,6 +11,8 @@ como := conseguimos inicialziar e inferir o tipo de uma variavel
 
 - string
 
+- nil -> valor nulo
+
 Podemos criar variaveis com valor constante tambem, utilizando a palavra reservada const 
 depois de atribuida um valor ele não poderar ser alterado
 
@@ -72,10 +74,31 @@ sintax: var array [4]string
 Slice: 
 Simplificando são arrays, porem com habilidae de se adaptarem a quantidade de dados que voce quise rinseir tendo um tamanho dinamico
 sintax: array := int[]{1,2,3}
+sintax: array := int[]{}
 
 
 cap(array) -> retorna capacidaed do array
 len(array) -> retorna a quantidade de elementos do array
+
+## Lendo arquivos
+
+É possivel ler os arquivos de varias maneiras
+
+uamd elas é utilizanfo
+o.Open(filename) -> retorna o endereço em memoria e um erro caso tenha
+os.ReadFile(filename) -> retorna os bits do arquivo e um erro caso tenha
+
+para ler as linhas de um arquivo podemos fazer da seguinte forma 
+acessamos o arquivo com:
+arquivo, erro := os.Open(filename)
+
+e depois usamos um leitor com o pacote bufio:
+leitor := bufio.NewReader(arquivo)
+
+com esse leitor podemos ler as linhas do arquivo com o ReadString:
+linha, erro := leitor.ReadString('\n')
+O ReadString precisa de um bit para indicar ate aonde ele vai ler a linha e ele retorna o texto da linha e um erro caso tenha
+Depois de ler a ultima linha ele retorna o erro END OF FILE
 
 ## Comando para executr o código
 - go run filename.go -> executa o código
