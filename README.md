@@ -11,6 +11,9 @@ como := conseguimos inicialziar e inferir o tipo de uma variavel
 
 - string
 
+Podemos criar variaveis com valor constante tambem, utilizando a palavra reservada const 
+depois de atribuida um valor ele não poderar ser alterado
+
 ## Controle de fluxo
 if não precisa de parenteses em volta da condição
 A condição do if precisa ser uma booleana true / false
@@ -22,6 +25,17 @@ if condição {
 }else {
   code
 }
+
+## Loops
+For infinito:
+for {}
+
+For tradicional:
+for i:=0 ;  i < len(array); i++{}
+
+For range:
+o range retorna a posição do item no array e o seu valor 
+for posição,item := range items{}
 
 
 ## Funções
@@ -49,6 +63,20 @@ switch option {
 		code
 	}
 
+## Coleção de dados
+
+Array:
+Arrays são definidos com seu tamanho e ele não pode ser alterado
+sintax: var array [4]string
+
+Slice: 
+Simplificando são arrays, porem com habilidae de se adaptarem a quantidade de dados que voce quise rinseir tendo um tamanho dinamico
+sintax: array := int[]{1,2,3}
+
+
+cap(array) -> retorna capacidaed do array
+len(array) -> retorna a quantidade de elementos do array
+
 ## Comando para executr o código
 - go run filename.go -> executa o código
 - go build filename.go -> gera o bin do código
@@ -60,3 +88,5 @@ switch option {
   TypeOf -> verificar tipo da var
 - os -> comunica com sistema operacional
   Exit() -> encerra o programa
+- time -> manipulaçao de tempo
+	Sleep -> faz o programa esperar por n tempo

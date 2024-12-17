@@ -4,7 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const delay = 10 * time.Second
+const monitoramentos = 5
 
 func main() {
 	for {
@@ -42,12 +46,27 @@ func selectOption() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Iniciando o Monitoramento...")
-	site := "https://alura.com.br"
-	response, _ := http.Get(site)
+	sites := []string{}
+
+	sites = append(sites, "https://alura.com.br")
+	sites = append(sites, "https://alura.com.br")
+	sites = append(sites, "https://alura.com.br")
+
+	for i := 0; i < monitoramentos; i++ {
+		for _, site := range sites {
+			testarURL(site)
+		}
+		time.Sleep(delay)
+	}
+
+}
+
+func testarURL(url string) {
+	response, _ := http.Get(url)
 
 	if response.StatusCode == 200 {
-		fmt.Println("Site:", site, "foi carregado com sucesso")
+		fmt.Println("Site:", url, "foi carregado com sucesso")
 	} else {
-		fmt.Println("Site:", site, "esta com problemas. Status Code:", response.StatusCode)
+		fmt.Println("Site:", url, "esta com problemas. Status Code:", response.StatusCode)
 	}
 }
