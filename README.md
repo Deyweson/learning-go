@@ -1,61 +1,35 @@
 # Aprendendo GO
 
-## Tipos de variaveis
-Variaveis devem ser utilizadas e não podem ser deixadas sem uso, isso gera erro de compilação
-como := conseguimos inicialziar e inferir o tipo de uma variavel
+## Variáveis
+Variaveis devem ser utilizadas e não podem ser deixadas sem uso. Isso gera erro de compilação.
+Com := conseguimos inicialziar e inferir o tipo de uma variável.
 
 - float
-- float32
-- float64
-- int
-
+- float32 -> numeros decimais de 64 bits
+- float64 -> numeros decimais de 32 bits
+- int -> Numeros inteiros 
 - string
-
 - bool -> valor booleano true / false
-
 - nil -> valor nulo
 
-Podemos criar variaveis com valor constante tambem, utilizando a palavra reservada const 
-depois de atribuida um valor ele não poderar ser alterado
+Também podemos criar váriveis constantes que seus valores não se alteram.
+Usando a palavra reservada const.
 
 ## Controle de fluxo
-if não precisa de parenteses em volta da condição
-A condição do if precisa ser uma booleana true / false
+if:
+Não é necessário parenteses.
+A condição precisar ser um resulado booleano, não pode ser usado 
 if:
 if condição {
   code
-}else if condição{
+} else if condição {
   code
-}else {
+} else {
   code
-}
-
-## Loops
-For infinito:
-for {}
-
-For tradicional:
-for i:=0 ;  i < len(array); i++{}
-
-For range:
-o range retorna a posição do item no array e o seu valor 
-for posição,item := range items{}
-
-
-## Funções
-
-func funcao() tipo {
-	return tipo
-}
-
-função comduplo valor de returno
-na hora de receber caso não deseja usar um dos tipos só colcoar o _ para ignorar ele
-func funcao() (tipo1, tipo2) {
-	return tipo1, tipo2
 }
 
 switch:
-O switch nao precisa utilizar o break é opcional
+O switch nao precisa utilizar o break ele é opcional
 switch option {
 	case 1:
 		code
@@ -65,7 +39,36 @@ switch option {
 		code
 	default:
 		code
-	}
+}
+
+## Loops
+For infinito:
+Or for sem condição torna ele um laço infinito, para finalizar ele é possivel usando a palavra break
+for {
+	break
+}
+
+For tradicional:
+for i:=0 ;  i < len(array); i++{}
+
+For range:
+o range retorna a posição do item no array e o seu valor 
+for posição,item := range items{
+	...code...
+}
+
+
+## Funções
+
+func funcao() tipo {
+	return tipo
+}
+
+função com duplo valor de retorno 
+na hora de receber caso não deseja usar um dos tipos só colcoar o _ para ignorar ele
+func funcao() (tipo1, tipo2) {
+	return tipo1, tipo2
+}
 
 ## Coleção de dados
 
