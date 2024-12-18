@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -25,6 +26,7 @@ func main() {
 			iniciarMonitoramento()
 		case 2:
 			fmt.Println("Exibindo Logs...")
+			imprimirLogs()
 		case 0:
 			fmt.Println("Saindo do programa...")
 			os.Exit(0)
@@ -69,8 +71,10 @@ func testarURL(url string) {
 
 	if response.StatusCode == 200 {
 		fmt.Println("Site:", url, "foi carregado com sucesso")
+		registraLog(url, true)
 	} else {
 		fmt.Println("Site:", url, "esta com problemas. Status Code:", response.StatusCode)
+		registraLog(url, false)
 	}
 }
 
@@ -98,4 +102,24 @@ func lerArquivo() []string {
 	arquivo.Close()
 
 	return sites
+}
+
+func registraLog(url string, status bool) {
+	// caminhodo arquivo , flag do que pode se fazer com ele de permissão
+	file, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	if err != nil {
+		fmt.Println("Error: ", err)
+	}
+
+	file.WriteString(time.Now().Format("02/01/2006 15:04:05 - ") + url + " - online: " + strconv.FormatBool(status) + "\n")
+}
+
+func imprimirLogs() {
+	file, err := os.ReadFile("log.txt")
+	if err != nil {
+		fmt.Println("Error: ", err)
+	}
+
+	fmt.Println(string(file))
+
 }

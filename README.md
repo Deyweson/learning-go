@@ -11,6 +11,8 @@ como := conseguimos inicialziar e inferir o tipo de uma variavel
 
 - string
 
+- bool -> valor booleano true / false
+
 - nil -> valor nulo
 
 Podemos criar variaveis com valor constante tambem, utilizando a palavra reservada const 
@@ -99,6 +101,32 @@ com esse leitor podemos ler as linhas do arquivo com o ReadString:
 linha, erro := leitor.ReadString('\n')
 O ReadString precisa de um bit para indicar ate aonde ele vai ler a linha e ele retorna o texto da linha e um erro caso tenha
 Depois de ler a ultima linha ele retorna o erro END OF FILE
+
+
+## Criando um Arquivo 
+Para criar o arquivo se utiliza da função OpenFile do pacote os, essa função precisa de 3 parametros
+path -> caminho do arquivo
+flag -> o que poderá ser feito com o arquivo
+permi -> código da permisão para manipular o arquivo
+
+file, err := os.OpenFile("log.txt", os.O_RDWR|os.O_CREATE, 0666)
+
+os.O_RDWR -> permisão apra ler o arquivo
+os.O_CREATE -> cria o arquivo caso ele não exista
+os.O_APPEND -> quando for escrever adiciona no final d arquivo
+
+Nesse comando acima, ele abre um arquivo, caso nao tenha ele é criado e tanbem 
+é dado permissão para editalo
+
+## Manipulando Horas
+
+Podemos usar o pacote time para manipular horas
+
+com time.Now() conseguimos a hora atual
+usando o .Format(), podemos definir o formta que ficara a hora em string
+no go a formatação usa string que são constantes inteiras.
+ex:
+time.Now().Format("02/01/2006 15:04:05")
 
 ## Comando para executr o código
 - go run filename.go -> executa o código
