@@ -12,4 +12,6 @@ type ContaCorrente struct {
 func main() {
 	fmt.Println(ContaCorrente{})
 
+	fmt.Println("hello world")
+
 }
