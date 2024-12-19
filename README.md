@@ -1,12 +1,12 @@
-# Aprendendo GO
+# Aprendendo
 
 ## Variáveis
 Variaveis devem ser utilizadas e não podem ser deixadas sem uso. Isso gera erro de compilação.
 Com := conseguimos inicialziar e inferir o tipo de uma variável.
 
 - float
-- float32 -> numeros decimais de 64 bits
-- float64 -> numeros decimais de 32 bits
+- float32 -> numeros decimais de 32 bits
+- float64 -> numeros decimais de 64 bits
 - int -> Numeros inteiros 
 - string
 - bool -> valor booleano true / false
