@@ -131,6 +131,12 @@ no go a formatação usa string que são constantes inteiras.
 ex:
 time.Now().Format("02/01/2006 15:04:05")
 
+
+## Importando e Exportando
+Para export o arquivo precisa ter seu package definido e as funções e tipos precisaão ser com a letra inicial maiuscula caso precisem ser publicos, isso serve para atribuitos de types
+
+para import é bem parecido com a importação das libs porem usando o path do arquivo até a pasta que ele esta
+
 ## Comando para executr o código
 - go run filename.go -> executa o código
 - go build filename.go -> gera o bin do código
