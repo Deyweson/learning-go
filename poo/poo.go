@@ -6,6 +6,14 @@ import (
 	contas "learning-go/poo/package"
 )
 
+type verificarConta interface {
+	Sacar(valor float64) string
+}
+
+func boleto(conta verificarConta, valor float64) {
+
+}
+
 func main() {
 
 	// // Exemplo utilizando os nomes do atributos
