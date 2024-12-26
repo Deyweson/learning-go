@@ -1,6 +1,6 @@
 package contas
 
-import "learning-go/poo/clientes"
+import "github.com/deyweson/learning-go/poo/clientes"
 
 type ContaCorrente struct {
 	Titular clientes.Titular

@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"learning-go/poo/clientes"
-	contas "learning-go/poo/package"
+
+	"github.com/deyweson/learning-go/poo/clientes"
+	contas "github.com/deyweson/learning-go/poo/package"
 )
 
 type verificarConta interface {
