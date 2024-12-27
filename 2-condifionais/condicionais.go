@@ -16,4 +16,15 @@ func condicionais() {
 		fmt.Println(x)
 	}
 
+	// Declaração do Switch
+	var x2 int = 10
+	switch x2 {
+	case 1:
+		fmt.Println(x2)
+	case 2:
+		fmt.Println(x2)
+	default:
+		fmt.Println(x2)
+	}
+
 }
